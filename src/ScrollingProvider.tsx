@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useMemo, useState } from 'react';
-import { debounce } from './utils';
-import { Provider } from './context';
 import smoothscroll from 'smoothscroll-polyfill';
+import { Provider } from './context';
+import { debounce } from './utils';
 
 type Props = {
   debounceDelay?: number;
@@ -13,7 +13,7 @@ type Props = {
 type RegisterRefsArgs = {
   id: string;
   meta: unknown;
-}
+};
 
 const REFS: RefsRegister = {};
 const META: Meta = {};
@@ -41,11 +41,12 @@ const ScrollingProvider = ({
   const handleScroll = () => {
     const selectedSection = Object.keys(REFS).reduce(
       (acc, id) => {
-        if (!REFS[id].current) return {
-          id: id,
-          differenceFromTop: 0
-        }
-        
+        if (!REFS[id].current)
+          return {
+            id: id,
+            differenceFromTop: 0,
+          };
+
         const { top } = REFS[id].current.getBoundingClientRect();
         const differenceFromTop = Math.abs(top);
 
@@ -67,7 +68,7 @@ const ScrollingProvider = ({
 
   const debounceScroll = debounce(handleScroll, debounceDelay);
 
-  const registerRef = ({id, meta}: {id: string, meta: unknown}) => {
+  const registerRef = ({ id, meta }: { id: string; meta: unknown }) => {
     const ref = React.createRef<HTMLElement>();
     REFS[id] = ref;
     META[id] = meta;
