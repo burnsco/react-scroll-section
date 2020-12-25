@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ScrollContext } from './context';
+import ScrollContext from './context';
 
 export const useScrollSection = (id: string) => {
   const { scrollTo, selected: selectedSection } = useContext(ScrollContext);

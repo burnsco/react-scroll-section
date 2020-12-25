@@ -1,12 +1,4 @@
-import ScrollingProvider from './ScrollingProvider';
-import Section from './Section';
-import { useScrollSection, useScrollSections } from './useScrollSection';
-import { ScrollContext } from './context';
-
-export {
-  ScrollContext,
-  Section,
-  ScrollingProvider,
-  useScrollSection,
-  useScrollSections,
-};
+export { default as ScrollContext } from './context';
+export { default as ScrollingProvider } from './ScrollingProvider';
+export { default as Section } from './Section';
+export { useScrollSection, useScrollSections } from './useScrollSection';

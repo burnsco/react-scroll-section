@@ -1,5 +1,5 @@
-import React, { useMemo, useContext } from 'react';
-import { ScrollContext } from './context';
+import React, { useContext, useMemo } from 'react';
+import ScrollContext from './context';
 
 type Props = {
   id: string;

@@ -8,8 +8,8 @@ const DEFAULT_CONTEXT = {
   registerRef: () => null,
 };
 
-export const ScrollContext = React.createContext<ScrollContextType>(
-  DEFAULT_CONTEXT,
-);
+const ScrollContext = React.createContext<ScrollContextType>(DEFAULT_CONTEXT);
 
 export const { Consumer, Provider } = ScrollContext;
+
+export default ScrollContext;
